@@ -2,6 +2,11 @@
 
 module.exports = {
   findMinMax: function(arrayOfNumbers) {
+    // Validate arrayOfNumbers and its elements.
+    if (!(arrayOfNumbers instanceof Array)) {
+      return 'Argument not an an array';
+    }
+
     var min = arrayOfNumbers[0];
     var max = arrayOfNumbers[0];
     for (var i = 1; i < arrayOfNumbers.length; i++) {
