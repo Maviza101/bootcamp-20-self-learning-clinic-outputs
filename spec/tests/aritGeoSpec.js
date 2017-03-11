@@ -5,6 +5,12 @@
     var myApp = require("../../app/aritGeo.js");
     var aritGeo = myApp.aritGeo;
 
+    describe("Case for a non-array argument", function() {
+      it("should return 'Argument not an array' for a non-array argument", function() {
+        expect(aritGeo("Some string")).toEqual("Argument not an array");
+      });
+    });
+
     describe("Case for an empty array", function() {
       it("should return 0 for an empty array", function() {
         expect(aritGeo([])).toEqual(0);
