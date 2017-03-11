@@ -2,6 +2,11 @@
 
 module.exports = {
 	aritGeo: function(arrayOfNumbers) {
+    // Check for non-array parameters.
+    if (!(arrayOfNumbers instanceof Array)) {
+      return 'Argument not an array';
+    }
+
     if (arrayOfNumbers.length == 0) {
       return 0;
     }
