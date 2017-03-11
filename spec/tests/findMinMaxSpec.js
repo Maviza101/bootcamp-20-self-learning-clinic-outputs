@@ -5,29 +5,25 @@
     var myApp = require(`../../app/findMinMax.js`);
     var findMinMax = myApp.findMinMax;
 
-    describe('Only work when supplied argument is an array of numbers', function() {
-      it('should return `Argument not an an array of numbers` for {}', function() {
-        expect(findMinMax({})).toBe('Argument not an an array of numbers');
+    describe('Only work when supplied argument is an array', function() {
+      it('should return `Argument not an an array` for {}', function() {
+        expect(findMinMax({})).toEqual('Argument not an an array');
       });
 
-      it('should return `Argument not an an array of numbers` for Boolean argument', function() {
-        expect(findMinMax(false)).toBe('Argument not an an array of numbers');
+      it('should return `Argument not an an array` for Boolean argument', function() {
+        expect(findMinMax(false)).toEqual('Argument not an an array');
       });
 
-      it('should return `Argument not an an array of numbers` for 6', function() {
-        expect(findMinMax(6)).toBe('Argument not an an array of numbers');
+      it('should return `Argument not an an array` for 6', function() {
+        expect(findMinMax(6)).toEqual('Argument not an an array');
       });
 
-      it('should return `Argument not an an array of numbers` for [`a`, `b`, `c`]', function() {
-        expect(findMinMax(['a', 'b', 'c'])).toBe('Argument not an an array of numbers');
-      });
-
-      it('should return `Argument not an an array of numbers` for [false, `a`, 7]', function() {
-        expect(findMinMax([false, 'a', 7])).toBe('Argument not an an array of numbers');
+      it('should return `Argument not an an array` for `jk`', function() {
+        expect(findMinMax('jk')).toEqual('Argument not an an array');
       });
 
       it('should return [2, 9] for [10, 4, 6, 2, 4, 5, 9]', function() {
-        expect(findMinMax([10, 4, 6, 2, 4, 5, 9])).toEqual([2, 9]);
+        expect(findMinMax([10, 4, 6, 2, 4, 5, 9])).toEqual([2, 10]);
       });
 
     });
