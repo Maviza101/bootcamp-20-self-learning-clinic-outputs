@@ -2,6 +2,9 @@
   'use strict';
 
   describe("Determine the sequence of an array of numbers: ", function() {
+    var myApp = require("../../app/aritGeo.js");
+    var aritGeo = myApp.aritGeo;
+
     describe("Case for an empty array", function() {
       it("should return 0 for an empty array", function() {
         expect(aritGeo([])).toEqual(0);
