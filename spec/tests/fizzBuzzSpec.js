@@ -2,6 +2,18 @@ describe("Fizz Buzz tests ", function() {
   var myApp = require("../../app/fizzBuzz.js");
   var fizzBuzz = myApp.fizzBuzz;
 
+  it("should return `Argument is not a number` for Boolean false", function() {
+    expect(fizzBuzz(false)).toBe('Argument is not a number');
+  });
+
+  it("should return `Argument is not a number` for []", function() {
+    expect(fizzBuzz([])).toBe('Argument is not a number');
+  });
+
+  it("should return `Argument is not a number` for Boolean {}", function() {
+    expect(fizzBuzz({})).toBe('Argument is not a number');
+  });
+
   it("should return `Fizz` for number divisible by 3", function() {
     expect(fizzBuzz(3)).toBe('Fizz');
   });
