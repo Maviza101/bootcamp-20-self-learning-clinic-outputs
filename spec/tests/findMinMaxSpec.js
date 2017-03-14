@@ -22,6 +22,10 @@
         expect(findMinMax('jk')).toEqual('Argument not an an array');
       });
 
+      it('should return `Array argument must not be empty` for []', function() {
+        expect(findMinMax([])).toEqual('Array argument must not be empty');
+      });
+
       it('should return [2, 9] for [10, 4, 6, 2, 4, 5, 9]', function() {
         expect(findMinMax([10, 4, 6, 2, 4, 5, 9])).toEqual([2, 10]);
       });
@@ -46,10 +50,14 @@
       });
     });
 
-    describe('Return the number in the list in a new list follows `[min]` when the ' + 
-    	'number is the min and max number in that list', function() {
+    describe('Return a single number in a new list if the min and max of the ' + 
+        'supplied list are equal', function() {
       it('should return [4] for [4, 4, 4, 4]', function() {
         expect(findMinMax([4, 4, 4, 4])).toEqual([4]);
+      });
+
+      it('should return [9] for [9]', function() {
+        expect(findMinMax([9])).toEqual([9]);
       });
     });
   });
